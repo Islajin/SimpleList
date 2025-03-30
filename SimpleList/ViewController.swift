@@ -93,7 +93,17 @@ extension ViewController :  UITableViewDataSource{
 extension ViewController : UITableViewDelegate{
     //UITableViewDelegate는 필수메소드가 없다.
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(fruits[indexPath.row])
+        
+        switch indexPath.section {
+        case 0:
+            print(fruits[indexPath.row])
+        case 1:
+            print(languages[indexPath.row])
+            default :
+            break
+            
+        }
+        
     }
 }
 

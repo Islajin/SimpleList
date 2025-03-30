@@ -45,3 +45,10 @@ extension ViewController :  UITableViewDataSource{
     }
     
 }
+
+extension ViewController : UITableViewDelegate{
+    //UITableViewDelegate는 필수메소드가 없다.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(fruits[indexPath.row])
+    }
+}

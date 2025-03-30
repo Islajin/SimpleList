@@ -67,8 +67,28 @@ extension ViewController :  UITableViewDataSource{
         //필수 메소드로, 어떤 데이터를 어떻게 표시해야 하는지를 나타냄
         //리턴 값이 UITableViewCell 임 즉, 셀을 만들고 데이터를 채워둔 새로운 셀을 만들어서 리턴하는 것임
     }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0 :
+            return "좋아하는 과일"
+        case 1 :
+            return "사용 언어"
+        default :
+            return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        switch section {
+        case 1 :
+            return "\(languages.count)개의 언어를 사용할 수 있습니다."
+        default :
+            return nil
+        }
+    }
     
 }
+
 
 extension ViewController : UITableViewDelegate{
     //UITableViewDelegate는 필수메소드가 없다.
@@ -76,3 +96,5 @@ extension ViewController : UITableViewDelegate{
         print(fruits[indexPath.row])
     }
 }
+
+
